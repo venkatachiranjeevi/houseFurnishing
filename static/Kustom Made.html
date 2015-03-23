@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://183.82.96.201:7080/fourWalls/ -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Kustom Made</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+        
+        <link href="./Kustom Made_files/main.css" rel="stylesheet" type="text/css">
+        <link href="./Kustom Made_files/thirdStep.css" rel="stylesheet" type="text/css">
+        <link href="./Kustom Made_files/jquery-ui.min.css" rel="stylesheet" type="text/css">
+        <link href="./Kustom Made_files/normalize.css" rel="stylesheet" type="text/css">
+        <link href="./Kustom Made_files/foundation.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="http://183.82.96.201:7080/static/css/lib/font-awesome-4.3.0/css/font-awesome.min.css">
+        <link type="text/css" rel="stylesheet" href="./Kustom Made_files/css">
+
+        
+        
+
+        
+        <script src="./Kustom Made_files/modernizr.js" type="text/javascript"></script>
+        <script src="./Kustom Made_files/jquery.js" type="text/javascript"></script>
+        <script src="./Kustom Made_files/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="./Kustom Made_files/fastclick.js" type="text/javascript"></script>
+        <script src="./Kustom Made_files/foundation.min.js" type="text/javascript"></script><meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge-only"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large-only"><meta class="foundation-mq-large"><meta class="foundation-mq-medium-only"><meta class="foundation-mq-medium"><meta class="foundation-mq-small-only"><meta class="foundation-mq-small"><style></style>
+        <script src="./Kustom Made_files/underscore-min.js" type="text/javascript"></script>
+        <script src="./Kustom Made_files/foundation.accordion.js" type="text/javascript"></script>
+        <script src="./Kustom Made_files/kinetic-v5.1.0.min.js" type="text/javascript"></script>
+        <script src="./Kustom Made_files/main.js" type="text/javascript"></script>
+    <meta class="foundation-mq-topbar"></head>
+
+    <body cz-shortcut-listen="true">
+
+        <div id="container" class="container">
+            <div class="row" id="breadcrumbs">
+                <div class="medium-3 large-3 columns active-crumb" id="step1">
+                    <div class="left step-number">01</div>
+                    <div class="left step-text-div">
+                        <h6>Setup your kitchen &nbsp; <i class="fa fa-info-circle" id="info-1"></i></h6>
+                        <p>Just tell us how your kitchen looks like</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="medium-3 large-3 columns" id="step2">
+                    <div class="left step-number">02</div>
+                    <div class="left step-text-div">
+                        <h6>Design your kitchen &nbsp; <i class="fa fa-info-circle" id="info-2"></i></h6>
+                        <p>Add cabinets, wall units, sinks etc.</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="medium-3 large-3 columns" id="step3">
+                    <div class="left step-number">03</div>
+                    <div class="left step-text-div">
+                        <h6>Order, summary &amp; pricing &nbsp; <i class="fa fa-info-circle" id="info-3"></i></h6>
+                        <p>Get a quote on your design.</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="medium-3 large-3 columns" id="price-tag">
+
+                </div>
+            </div>
+            <div id="error-div">
+                <div>
+                    <h5 style="color:#ce1111;font-weight:bold;margin:0 0 5px 0;"><i class="fa fa-warning"></i>&nbsp;&nbsp;Error!</h5>
+                    <div id="error-division" style="display:none;">
+                        Some Error Message. Change this text.
+                    </div>
+                    <span id="error-message"></span>
+                </div>
+            </div>
+
+            <div id="infoData" class="reveal-modal tiny" data-reveal="">
+                <div id="info-options"></div>
+                <a class="close-reveal-modal">×</a>
+            </div>
+
+        
+    <div class="row" id="main-container">
+        <div class="medium-8 large-8 columns" id="canvas-container">
+            <div id="canvas"><div class="kineticjs-content ui-droppable" role="presentation" style="position: relative; display: inline-block; width: 707.75px; height: 517.828125px; margin-top: 54.0859375px;"><canvas width="707" height="517" style="padding: 0px; margin: 0px; border: 0px; position: absolute; top: 0px; left: 0px; width: 707.75px; height: 517.828125px; background: transparent;"></canvas></div></div>
+        </div>
+
+        <div class="medium-4 large-4 columns" id="selection-container">
+            <div id="modify-wall" class="custom-div">
+                <p>Modify Wall Properties</p>
+                <div class="left">
+                    <div class="wall">
+                        <label>Wall A</label>
+                        <select class="wall-prop" id="wall-a-feet">
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12" selected="">12</option>
+                        </select>
+
+                        <select class="wall-prop" id="wall-a-inches">
+                            <option value="0" selected="">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                        </select>
+                    </div>
+
+                    <div class="wall">
+                        <label>Wall B</label>
+                        <select class="wall-prop" id="wall-b-feet">
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8" selected="">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+
+                        <select class="wall-prop" id="wall-b-inches">
+                            <option value="0" selected="">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                        </select>
+                    </div>
+
+                    <div class="wall">
+                        <label>Wall C</label>
+                        <select disabled="" class="wall-prop" id="wall-c-feet">
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12" selected="">12</option>
+                        </select>
+
+                        <select disabled="" class="wall-prop" id="wall-c-inches">
+                            <option value="0" selected="">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                        </select>
+                    </div>
+
+                    <div class="wall">
+                        <label>Wall D</label>
+                        <select disabled="" class="wall-prop" id="wall-d-feet">
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8" selected="">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+
+                        <select disabled="" class="wall-prop" id="wall-d-inches">
+                            <option value="0" selected="">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="right bottom-elem">
+                    <a href="javascript:void(0);" class="button secondary small custom" id="walls-done">Done</a>
+                    <a data-reveal-id="resetModal" href="http://183.82.96.201:7080/fourWalls/#" class="button secondary small custom" id="walls-enable">Reset</a>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+
+            <div id="obstacle-selection" class="custom-div">
+                <p>Add Obstacles to room</p>
+                <p><i class="fa fa-info-circle"></i><span class="note">&nbsp;Drag and drop the obstacles as they are positioned in your proposed kitchen.</span></p>
+                <div id="obstacle-list1" style="min-height: 80px;">
+                    <div class="left obstacle">
+                        <div class="obstacles-overlay"></div>
+                        <img rel="windows" src="./Kustom Made_files/windows-icon.png" class="ui-draggable ui-draggable-handle"><br>
+                        Windows
+                    </div>
+
+                    <div class="left obstacle">
+                        <div class="obstacles-overlay"></div>
+                        <img rel="doors" src="./Kustom Made_files/door-icon.png" class="ui-draggable ui-draggable-handle"><br>
+                        Doors
+                    </div>
+
+                    <div class="left obstacle">
+                        <div class="obstacles-overlay"></div>
+                        <img rel="electric" src="./Kustom Made_files/electric.png" class="ui-draggable ui-draggable-handle"><br>
+                        Electric
+                    </div>
+                </div>
+
+                <div id="obstacle-list2" style="min-height: 80px;">
+                    <div class="left obstacle">
+                        <div class="obstacles-overlay"></div>
+                        <img rel="plumbing" src="./Kustom Made_files/plumbing-icon.png" class="ui-draggable ui-draggable-handle"><br>
+                        Plumbing
+                    </div>
+
+                    <div class="left obstacle">
+                        <div class="obstacles-overlay"></div>
+                        <img rel="cookingArea" src="./Kustom Made_files/cooking-area.png" class="ui-draggable ui-draggable-handle"><br>
+                        Cooking area
+                    </div>
+
+                    <div class="left obstacle">
+                        <div class="obstacles-overlay"></div>
+                        <img rel="emptySpace" src="./Kustom Made_files/emptyspace.png" class="ui-draggable ui-draggable-handle"><br>
+                        Empty space
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="resetModal" class="reveal-modal tiny" data-reveal="">
+          <p>You will lose your design. Are you sure you want to reset?</p>
+          <div id="buttons" class="right">
+              <a id="confirm-reset" class="radius button secondary tiny custom" href="javascript:void(0);" style="padding: 10px 20px 11px !important;">Yes</a>
+              <a id="close-reset" class="radius button secondary tiny" href="javascript:void(0);">No</a>
+          </div>
+        </div>
+
+        <div id="obstacleData" class="reveal-modal tiny" data-reveal="">
+            <div id="obstacle-options"></div>
+            <a class="close-reveal-modal">×</a>
+            <div id="buttons" class="right">
+              <a id="change-obstacle-prop" class="radius button secondary tiny custom" href="javascript:void(0);" style="padding: 10px 20px 11px !important;">Save changes</a>
+              <a id="close-obs-popup" class="radius button secondary tiny" href="javascript:void(0);">Cancel</a>
+          </div>
+        </div>
+    </div>
+
+    <div id="buttons-Panel">
+        <div class="left">
+            
+        </div>
+
+        <div class="right">
+            
+            <a id="next-step" class="button secondary small custom" href="javascript:void(0);" style="padding: 10px 20px 11px !important;">Next</a>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+        
+        
+    <script src="./Kustom Made_files/fourWalls.js"></script>
+
+        </div>
+
+        <div id="loading-div" style="display: none;">
+            <img src="./Kustom Made_files/wait.gif">&nbsp;
+            <span id="loader-message">Fetching obstacle types...</span>
+        </div>
+    
+</body></html>

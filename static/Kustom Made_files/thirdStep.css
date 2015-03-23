@@ -1,0 +1,84 @@
+
+.butn-decisions{
+    padding:8px;
+}
+
+#div-text-upper{
+    border-bottom: 2px solid #D2D2C2;
+}
+
+#div-main{
+    padding:40px;
+}
+.clear{
+    clear:both;
+}
+
+#price-text{
+    text-align:center;
+    padding-top:20px;
+    padding-bottom:10px;
+}
+
+#book-now{
+    text-align:center;
+    padding-bottom:20px;
+}
+
+#div-buttons button{
+    margin-left:5px;
+    background-color: white;
+    border-style : solid;
+    border-width : 1px;
+    border-color: #d20628;
+    color: #d20628;
+    font-size: 1.2em;
+}
+
+#div-buttons button:hover{
+    color: white;
+    background-color: #d20628;
+}
+
+#div-buttons button:active{
+    border-color: white;
+}
+
+#order-text{
+    padding-left:20px;
+}
+
+#div-main{
+    height:600px;
+}
+#order-summary-text{
+    background-color:#00B8E6 !important;
+    font-size:1.2em !important;
+    color:white !important;
+}
+
+#div-order{
+    padding:40px;
+}
+
+.accordion-navigation>a{
+    padding : 0.5rem !important;
+}
+
+#panel1a{
+    padding:0px;
+}
+
+th{
+    background-color:#E4E4DA;
+    text-align:center !important;
+}
+
+table{
+    width:100%;
+}
+
+td{
+    text-align:center !important;
+}
+

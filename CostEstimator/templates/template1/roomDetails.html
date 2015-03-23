@@ -1,0 +1,62 @@
+{% load static %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>RoomEstimator</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/foundation.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}" type="text/css" />
+
+
+</head>
+<body>
+
+    <div  class="row option-heading">
+        <a href="/" style="height:45px"><img src="/static/custom-furnish.png" alt="KustomMade"></a>
+    </div>
+    <div class="row">
+        <table style="margin-top: 20px; margin-left: auto; margin-right: auto">
+            <caption style="margin-bottom:20px">Rooms Furniture Cost</caption>
+            <thead>
+            <tr>
+                <th width="120">ROOM NAME</th>
+                <th width="120">ITEM NAME</th>
+                <th width="120">ITEM WIDTH</th>
+                <th style="text-align: center;">ITEM</th>
+                <th width="120">ITEM MATERIAL</th>
+                <th width="120">Quantity</th>
+                <th width="120">ITEM COST</th>
+            </tr>
+        </thead>
+         <tbody>
+
+                {% for rooms in dat %}
+                        {% for values in rooms.value %}
+                            <tr>
+                            <td>{{ rooms.key }}</td>
+                            <td>{{ values.itemName }}</td>
+                            <td>{{ values.itemLength|floatformat:0 }}</td>
+                            {% if "wardrobe" in values.itemName %}
+                                <td><img src="/static/{{values.itemLength|floatformat:0}}.png"  alt="Wardrobe"/></td>
+                                <td>Prelaminated Particle Board</td>
+                                <td>{{ values.Qunatity }}</td>
+                                {%  endif %}
+                                {% if "cooking-area" in values.itemName %}
+                                <td><img src="/static/kitchen/{{values.itemLength|floatformat:0}}.jpg" alt="Kitchen"/></td>
+                                    <td>Prelaminated Particle Board</td>
+                                    <td> - </td>
+                                {%  endif %}
+                            <td>{{ values.itemCost}}</td>
+                            </tr>
+
+                         {% endfor %}
+               {% endfor %}
+        </tbody>
+</table>
+    </div>
+</div>
+</body>
+</html>

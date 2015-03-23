@@ -1,0 +1,196 @@
+body{
+    font-family: 'Open Sans',MyriadPro,'Myriad Pro',MyriadPro-Regular,'Myriad Pro Regular',Helvetica,Arial,sans-serif!important;
+    font-size: 14px;
+
+}
+.main{
+    margin-left: 1px;
+    margin-right: 0px;
+    height:595px;
+}
+a img {
+    padding-top: 15px;
+    border: none;
+}
+.option-heading{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+#canvas-draw {
+    height: 530px;
+    width: 641.8181817531586px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+    background-color: transparent;
+    background-image: linear-gradient(0deg, transparent 24%, #E9E5E4 25%, #E9E5E4 26%, transparent 27%, transparent 74%, #E9E5E4 75%, #E9E5E4 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, #E9E5E4 25%, #E9E5E4 26%, transparent 27%, transparent 74%, #E9E5E4 75%, #E9E5E4 76%, transparent 77%, transparent);
+    height: 100%;
+    background-size: 50px 50px;
+    border:1px solid;
+}
+#container{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    width: 610px;
+    height: 490px;
+}
+.options{
+    top:-50px;
+    height:550px;
+}
+#selection-area{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.draw-region{
+     /*border: 2px solid;*/
+    height:530px;
+}
+.section-title {
+    text-align: center;
+    border-top: 0;
+    padding: 15px 0;
+    font-size: 24px;
+    color: #444;
+    padding-bottom: 5px;
+}
+.room-select{
+    height:40px;
+}
+.room-choice{
+    width:150px;
+    height:30px;
+    padding:4px 6px;
+    margin-bottom:0px;
+}
+.wall-prop{
+    width: 50px;
+    margin-bottom:10px;
+}
+.wall label {
+    display: inline;
+    margin-right: 20px;
+}
+#modify-wall{
+    padding-top:0px;
+    height:160px;
+}
+#obstacle-selection{
+    height:250px;
+    width:400px;
+}
+.button:hover{
+    background-color: rgba(227,30,36,1) !important;
+}
+.button:focus{
+    background-color: rgba(227,30,36,1) !important;
+}
+.dimen{
+    position: relative;
+    left: 190px;
+    top: -40px;
+}
+.left{
+    height:100px;
+}
+.customize-button.c-red{
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: rgba(227,30,36,.8);
+    color: #fff;
+    cursor: pointer;
+    /*float: left;*/
+    padding-top: 6px;
+    padding-left:20px;
+}
+.items{
+    height:250px;
+    width:380px !important;
+}
+.note{
+    font-size:16px;
+}
+.hint{
+    font-size:13px;
+    margin-bottom:0px;
+
+}
+.list-items{
+    border:1px solid;
+}
+.ob-list1{
+    position: relative;
+    height: 90px;
+}
+.ob-list2{
+    position: relative;
+    height:90px;
+}
+.item{
+    width:80px;
+    height:80px;;
+    border: 1px solid;
+    background-color: #F1F1F1;
+    cursor: pointer;
+}
+#door-icon, #bed-point{
+    position:absolute;
+    left:5%;
+    top:5%;
+}
+#window-icon, #cooking-place{
+    position: absolute;
+    left:27%;
+    top:5%
+}
+#wardrobe-icon, #water-point{
+    position: absolute;
+    left:49%;
+    top:5%;
+}
+#sofa-icon, #electric{
+    position:absolute;
+    left:71%;
+    top: 5%;
+}
+.icons{
+    position: absolute;
+    left:30%;
+    top:5%;
+    width:25px;
+    height:40px;
+}
+#sofa{
+    height:35%;
+    width:50%;
+    top:17%;
+    left:20%
+}
+.item-name{
+    position: absolute;
+    left: 21%;
+    top: 58%;
+    font-size: 12px;
+}
+#generate{
+    height:16%;
+    width:400px;
+}
+.gen{
+    font-size: 15px;
+    margin-bottom:3px;
+}
+#estimator{
+    left:30%;
+    width: 40%;
+    font-size: 15px;
+    padding-left: 30px;
+    margin-bottom: 0px;
+}

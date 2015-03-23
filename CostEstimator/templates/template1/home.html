@@ -1,0 +1,162 @@
+{% load static %}
+{% load staticfiles %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ImageData</title>
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/foundation.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}" type="text/css" />
+{#    <link async href="http://fonts.googleapis.com/css?family=Arvo" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>#}
+    <script src="{% static 'js/jquery.js'%}"></script>
+    <script src="{% static 'js/jquery.cookie.js' %}"></script>
+    <script src="{% static 'js/foundation.min.js'%}"></script>
+    <script src="{% static 'js/kinetic-v5.1.0.min.js'%}"></script>
+    <script src="{% static 'js/imageLoad.js'%}"></script>
+
+</head>
+<body>
+    <div class="row head">
+    <div  class="large-8 columns option-heading">
+        <a href="/" style="height:45px"><img src="/static/custom-furnish.png" alt="KustomMade"></a>
+    </div>
+        </div>
+    <div class="row main" style="height:530px">
+    <div class="large-8 medium-8 columns draw-region">
+        <div id="canvas-draw" >
+            <div id="container"> </div>
+        </div>
+    </div>
+    <div class=" large-4 medium-4 columns options" id="selection-area">
+        <div class="section-title"> COST ESTIMATOR</div>
+        <div id="modify-wall" class="custom-div">
+            <div class="room-select">
+                <span class="room-name" style="position: relative;font-size: 15px;padding-right: 5px">Choose RoomName:</span>
+                <select class="room-choice" id="room-name" >
+                    <option value=""></option>
+                    <option value="Livingroom">Living Room</option>
+                    <option value="Master-Bedroom">Master Bedroom</option>
+                    <option value="Bedroom1">BedRoom1</option>
+                    <option value="Bedroom2">BedRoom2</option>
+                    <option value="Bedroom3">BedRoom3</option>
+                    <option value="Kitchen">Kitchen</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <span style="font-size: 15px;">Room Dimensions</span></br>
+            <div class="left">
+                <div class="wall">
+                    <label>Wall A/C</label>
+                    <select class="wall-prop" id="wall-a-feet">
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12" selected="">12</option>
+                    </select>
+                    <select class="wall-prop" id="wall-a-inches" >
+                        <option value="0" >0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11" selected="">11</option>
+                    </select>
+                </div>
+                <div class="wall">
+                    <label>Wall B/D</label>
+                    <select class="wall-prop" id="wall-b-feet" >
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12" selected="">12</option>
+                    </select>
+                    <select class="wall-prop" id="wall-b-inches">
+                        <option value="0" >0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11" selected="">11</option>
+                    </select>
+                </div>
+                <div class="dimen">
+                    <a href="" class="button customize-button c-medium c-red" id="walls-done" >Fix Room</a>
+                </div>
+            </div>
+        </div>
+        <div id="obstacle-selection" class="custom-div">
+            <p></p>
+            <span class="note">Add Obstacles to room</span>
+            <p class="hint">&nbsp;Drag and drop the obstacles where you need to place them.</p>
+            <div class="list-items" id="fur">
+                <div class="ob-list1">
+                    <div class="ui-draggable ui-draggable-handle item" id="door-icon" >
+                        <img id="door" rel="door-point" src="static/door-icon.png" class="ui-draggable ui-draggable-handle icons" ><br>
+                        <span class="item-name">Wall-Door</span>
+                    </div>
+                    <div class="item" id="window-icon">
+                         <img id="window" rel="windows" src="static/windows-icon.png" class="ui-draggable ui-draggable-handle icons"><br>
+                         <span class="item-name">WINDOW</span>
+                    </div>
+                    <div class="item" id="wardrobe-icon">
+                         <img id="wardrobe" rel="windows" src="static/wardrobe.jpg" class="ui-draggable ui-draggable-handle icons"><br>
+                        <span class="item-name">Wardrobe</span>
+                    </div>
+                    <div class="item" id="sofa-icon">
+                         <img id="sofa" rel="windows" src="static/sofa1.png" class="ui-draggable ui-draggable-handle icons"><br>
+                        <span class="item-name">Sofa</span>
+                    </div>
+                </div>
+                <div class="ob-list2">
+                     <div class="item" id="bed-point">
+                         <img id="bed" rel="sleep-mode" src="static/bed.png" class="ui-draggable ui-draggable-handle icons"><br>
+                        <span class="item-name">Bed</span>
+                     </div>
+                    <div class="item" id="cooking-place">
+                         <img id="cooking-area" rel="food-point" src="static/cooking-area.png" class="ui-draggable ui-draggable-handle icons"><br>
+                        <span class="item-name">Cooking-area</span>
+                    </div>
+                    <div class="item" id="water-point">
+                         <img id="plumbing" rel="plumbing-point" src="static/plumbing-icon.png" class="ui-draggable ui-draggable-handle icons"><br>
+                        <span class="item-name">Plumbing</span>
+                    </div>
+                    <div class="item" id="electric">
+                         <img id="plug" rel="electric-point" src="static/electric.png" class="ui-draggable ui-draggable-handle icons"><br>
+                        <span class="item-name">Electric Point</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+        <div id="generate" class="room-process">
+            <p class="gen">To generate cost estimation after completion of all rooms</p>
+            <div class="cost-estimate">
+                    <a href="" class="button customize-button c-medium c-red" id="estimator" >Cost Estimate</a>
+            </div>
+        </div>
+        <form action="/register" method="POST" id="formData">
+            {% csrf_token %}
+            <input type="hidden"  name="x" id="none" >
+        </form>
+        </div>
+    </div>
+</body>
+</html>
