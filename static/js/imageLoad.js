@@ -10,27 +10,41 @@ window.onload=function() {
     layer.removeChildren();
     $(function() {
         $("#room-name").change(function(event){
-            var flag=0;
-            if ($("#room-name").val()!="") {
-                drawRoom();
-                for (var i = 0; i < allCoords.length; i++) {
-                    if (allCoords[i][0].name == $("#room-name").val()) {
-                        displayRoom(allCoords[i]);
-                        flag = 1;
-                        break;
-                    }
-                }
-                fixRoom();
-                if (flag == 0) {
-                    var x = document.getElementsByClassName("wall-prop");
-                    for (var i = 0; i < x.length; i++)
-                        x[i].disabled = false;
-                }
-            }
-             else
-             layer.removeChildren();
+            roomDisplay();
+
         });
     });
+    $(function() {
+        $(".wall-prop").change(function(event){
+            drawRoom();
+            roomDisplay();
+        });
+
+    });
+    function roomDisplay(){
+        var flag=0;
+        if ($("#room-name").val()!="") {
+            drawRoom();
+            for (var i = 0; i < allCoords.length; i++) {
+                if (allCoords[i][0].name == $("#room-name").val()) {
+                    displayRoom(allCoords[i]);
+                    flag = 1;
+                    break;
+                }
+            }
+            //fix1Room();
+            if (flag == 0) {
+                var x = document.getElementsByClassName("wall-prop");
+                //for (var i = 0; i < x.length; i++)
+                //    x[i].disabled = false;
+                allCoords[allCoords.length]=new Array();
+                allCoords[allCoords.length-1].push({name:$("#room-name").val(),wallAfeet:$("#wall-a-feet").val(),wallAInch:$("#wall-a-inches").val(),wallBfeet:$("#wall-b-feet").val(),wallBInch:$("#wall-b-inches").val()});
+            }
+        }
+        else {
+            layer.removeChildren();
+        }
+    }
     function drawRoom() {
         layer.removeChildren();
         if($("#room-name").val()!="") {
@@ -48,11 +62,6 @@ window.onload=function() {
             layer.add(background);
             stage.add(layer);
         }
-    }
-    function fixRoom(){
-        var x = document.getElementsByClassName("wall-prop");
-        for (var i = 0; i < x.length; i++)
-            x[i].disabled = true;
     }
     function displayRoom(temp){
         for(var k=1;k<temp.length;k++){
@@ -186,7 +195,7 @@ window.onload=function() {
          e.preventDefault();
         var index=allCoords.length-1;
         var details=null,radius;
-        if($("#room-name").val()!=""&& document.getElementById("wall-a-feet").disabled==true) {
+        if($("#room-name").val()!="") {
             var color = "", xpos= e.layerX, ypos= e.layerY;
             if (item.id == "door") {
                 color = "#B8860B";
@@ -225,7 +234,6 @@ window.onload=function() {
             if(item.id!="sofa")
                 details=getRectValues(e.layerX, e.layerY,item.id,radius,color);
             if(item.id!=="sofa" && details!=0) {
-                //var nodes = layer.getChildren();
                 drawObjects(details);
             }
             else if(item.id=="sofa"){
@@ -235,7 +243,9 @@ window.onload=function() {
                     xpos: get_Sofa_X(e.layerX),
                     ypos: get_Sofa_Y(e.layerY),
                     name:'sofa',
-                    color:color
+                    color:color,
+                    wallLen:getWidth(),
+                    wallHeight:getHeight()
                 };
                 drawImages(details);
             }
@@ -246,6 +256,13 @@ window.onload=function() {
         }
     });
     function drawObjects(details){
+        var diffX=getWidth()-details.wallLen;
+        var diffY=getHeight()-details.wallHeight;
+        details.xpos+=diffX;
+        details.ypos+=diffY;
+        details.wallLen=getWidth();
+        details.wallHeight=getHeight();
+
         var background = new Kinetic.Rect({
             x: details.xpos,
             y: details.ypos,
@@ -273,6 +290,12 @@ window.onload=function() {
         return details;
     }
     function drawImages(details){
+        var diffX=getWidth()-details.wallLen;
+        var diffY=getHeight()-details.wallHeight;
+        details.xpos+=diffX;
+        details.ypos+=diffY;
+        details.wallLen=getWidth();
+        details.wallHeight=getHeight();
         var image=new Kinetic.Image({
             x: details.xpos,
             y: details.ypos,
@@ -338,7 +361,9 @@ window.onload=function() {
                 ypos:yp,
                 name:name,
                 color:color,
-                wallName:wN
+                wallName:wN,
+                wallLen:getWidth(),
+                wallHeight:getHeight()
             };
         }
         else if(((x>25&&x<=53)||(x>350+getWidth()+30&&x<350+getWidth()+60))&&(y>=25&&y<=250+getHeight()+40)){
@@ -361,7 +386,9 @@ window.onload=function() {
                 ypos:yp,
                 name:name,
                 color:color,
-                wallName:wN
+                wallName:wN,
+                wallLen:getWidth(),
+                wallHeight:getHeight()
             };
         }
         else{
@@ -400,20 +427,6 @@ window.onload=function() {
         }
         return [x,y];
     }
-    $(function() {
-        $(".wall-prop").change(drawRoom);
-        drawRoom();
-    });
-    $(function() {
-        $("#walls-done").click(function (event) {
-            event.preventDefault();
-            if ($("#room-name").val() != "") {
-                fixRoom();
-                allCoords[allCoords.length]=new Array();
-                allCoords[allCoords.length-1].push({name:$("#room-name").val(),wallAfeet:$("#wall-a-feet").val(),wallAInch:$("#wall-a-inches").val(),wallBfeet:$("#wall-b-feet").val(),wallBInch:$("#wall-b-inches").val()});
-            }
-        });
-    });
     $(function(){
        $("#estimator").click(function(event){
            event.preventDefault();
@@ -456,7 +469,6 @@ window.onload=function() {
         });
     }
     function getCost(feet,item){
-        //(item=="wardrobe")?return "Rs. "+((feet*6*800).toFixed(2));:return "Rs. "+(feet*5900).toFixed(2);
         if(item=="wardrobe")
             return "Rs. "+((feet*6*800).toFixed(2))
         else

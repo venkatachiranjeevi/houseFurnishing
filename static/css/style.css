@@ -90,11 +90,11 @@ a img {
 .button:focus{
     background-color: rgba(227,30,36,1) !important;
 }
-.dimen{
-    position: relative;
-    left: 190px;
-    top: -40px;
-}
+/*.dimen{*/
+    /*position: relative;*/
+    /*left: 190px;*/
+    /*top: -40px;*/
+/*}*/
 .left{
     height:100px;
 }
